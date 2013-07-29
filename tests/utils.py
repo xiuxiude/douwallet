@@ -1,7 +1,6 @@
 import functools
 
 from douwallet.app import create_app
-from nose.tools import assert_equal, assert_in
 
 
 def with_client(wrapped):
@@ -14,7 +13,7 @@ def with_client(wrapped):
 
 
 def assert_status(response, status):
-    assert_equal(response.status_code, status)
+    assert response.status_code == status
 
 
 assert_200 = functools.partial(assert_status, status=200)
@@ -27,6 +26,6 @@ assert_405 = functools.partial(assert_status, status=405)
 
 def assert_responded(response, fragment, partial=False):
     if partial:
-        assert_in(fragment, response.data)
+        assert fragment in response.data
     else:
-        assert_equal(response.data, fragment)
+        assert response.data == fragment

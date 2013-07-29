@@ -1,5 +1,3 @@
-from nose.tools import assert_equal
-
 from tests import utils
 
 
