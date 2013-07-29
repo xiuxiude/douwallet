@@ -9,7 +9,11 @@ Werkzeug==0.9.3
 bpython==0.12
 coverage==3.6
 distribute==0.7.3
+flake8==2.0
 itsdangerous==0.22
+mccabe==0.2.1
+pep8==1.4.6
 py==1.4.15
+pyflakes==0.7.3
 pytest==2.3.5
 wsgiref==0.1.2
