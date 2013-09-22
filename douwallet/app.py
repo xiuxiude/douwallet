@@ -3,12 +3,12 @@
 
 from flask import Flask
 
-from models import db
-from admin import admin
-from auth import login_manager
+from douwallet.models import db
+from douwallet.admin import admin
+from douwallet.auth import login_manager
 
-import views.home
-import views.auth
+import douwallet.views.home
+import douwallet.views.auth
 
 
 def create_app():
