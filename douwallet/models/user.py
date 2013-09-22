@@ -6,6 +6,7 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True)
     email = db.Column(db.String(80), unique=True)
     password_digest = db.Column(db.String(128))
+    is_admin = db.Column(db.Boolean(), default=False)
 
     # Flask-Login integration
     def is_authenticated(self):
