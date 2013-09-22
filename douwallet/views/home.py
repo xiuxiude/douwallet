@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
 from flask import Blueprint
 
 
@@ -5,5 +8,5 @@ bp = Blueprint("home", __name__, url_prefix="/")
 
 
 @bp.route("/")
-def home():
+def index():
     return "It works."

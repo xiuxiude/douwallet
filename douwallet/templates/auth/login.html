@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="" method="POST" accept-charset="utf-8">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.csrf_token }}
+        <div>{{ form.login.label }}: {{ form.login }}</div>
+        <div>{{ form.password.label }}: {{ form.password }}</div>
+    </div>
+    <div>
+        <input type="reset">
+        <input type="submit">
+    </div>
+</form>
+{% endblock body %}
