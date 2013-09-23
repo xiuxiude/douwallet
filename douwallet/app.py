@@ -1,10 +1,14 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
+
+from douwallet.models import db
+from douwallet.admin import admin
+from douwallet.auth import login_manager
 
 import douwallet.views.home
-
-
-db = SQLAlchemy()
+import douwallet.views.auth
 
 
 def create_app():
@@ -22,8 +26,11 @@ def create_app():
 
     # initializes extensions
     db.init_app(app)
+    admin.init_app(app)
+    login_manager.init_app(app)
 
     # registers blueprints
-    app.register_blueprint(douwallet.views.home.bp)
+    app.register_blueprint(views.home.bp)
+    app.register_blueprint(views.auth.bp)
 
     return app
